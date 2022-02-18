@@ -34,9 +34,11 @@ const cart = [
 ]
 
 //CODE HERE
+startVal = 0
+const summedPrice = Object.values(cart).reduce((prev, curr) => 
+    prev.price + curr.price)
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
-
+console.log(summedPrice)
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -54,8 +56,12 @@ const cart = [
 */
 
 //CODE HERE
-
-
+let calcFinalPrice = (cartTotal, couponValue, tax) =>{
+    cartTotal *= tax + 1
+    cartTotal -= couponValue
+    return cartTotal
+}
+console.log(calcFinalPrice(100,5,.06))
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -79,7 +85,10 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
-
+name : customers name, good for filling in data
+id: uniqe customer id, good for finding customer if they have the same name
+email: customers email, good for sending emails to customer
+age: good for tracking market trends
 */
 
 /*
@@ -88,3 +97,10 @@ const cart = [
 */
 
 //CODE HERE
+
+let customer = {
+    name: "eli",
+    id: "1234asdf",
+    email: "eli@email.com",
+    age: 21
+}

@@ -31,7 +31,14 @@
 */
 
 //CODE HERE
-
+let pizza = {
+    name : `pizza`,
+    price: 10,
+    category: `entree`,
+    popularity: 2,
+    rating: 5,
+    tags:['vegan','spicy']
+}
 
 
 //////////////////PROBLEM 2////////////////////
@@ -43,7 +50,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.popularity)
 
 /*
     Second, log the second tag in your pizza's
@@ -53,7 +60,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.tags[1])
 
 /*
     Third, destructure the price off of the
@@ -63,8 +70,8 @@
 */
 
 //CODE HERE
-
-
+let {price} = pizza
+console.log(price)
 /*
     Fourth, and last, destructure the category
     property.
@@ -73,7 +80,8 @@
 */
 
 //CODE HERE
-
+let {category} = pizza
+console.log(category)
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -88,7 +96,49 @@
 */
 
 //CODE HERE
-
+let foodArr = [
+    {
+        name : `pizza`,
+        price: 10,
+        category: `entree`,
+        popularity: 2,
+        rating: 5,
+        tags:['vegan','spicy']
+    },
+    {
+        name : `hamburger`,
+        price: 5,
+        category: `entree`,
+        popularity: 3,
+        rating: 4,
+        tags:['sandwich','hot']
+    },
+    {
+        name : `apple`,
+        price: 1,
+        category: `appetizer`,
+        popularity: 4,
+        rating: 6,
+        tags:['fruit','sweet']
+    },
+    {
+        name : `cashew`,
+        price: 2,
+        category: `appetizer`,
+        popularity: 1,
+        rating: 7,
+        tags:['nuts','snacks']
+    },
+    {
+        name : `pasta`,
+        price: 11,
+        category: `entree`,
+        popularity: 8,
+        rating: 9,
+        tags:['gluten','italian']
+    },
+    
+]
 
 
 //////////////////PROBLEM 4////////////////////
@@ -105,8 +155,8 @@
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
-
+ const filteredFood = foodArr.filter(food => food.tags.includes(`snacks`))
+console.log(filteredFood)
 
 
 //////////////////PROBLEM 5////////////////////
@@ -149,7 +199,16 @@
 */
 
 //CODE HERE
-
+let filterByProperty = (property, number, type) => {
+    let filterdArr = foodArr.filter(foods => {
+        if(type === 'above'){
+            return foods[property] >= number
+        }else if(type === 'below'){
+            return foods[property] <= number
+        }
+    })
+    return filterdArr
+}
 
 /*
     Invoke the `filterByProperty` function passing
@@ -159,3 +218,4 @@
 */
 
 //CODE HERE
+console.log(filterByProperty('price',10,'above'))
