@@ -34,9 +34,8 @@ const cart = [
 ]
 
 //CODE HERE
-startVal = 0
-const summedPrice = Object.values(cart).reduce((prev, curr) => 
-    prev.price + curr.price)
+const summedPrice = cart.reduce((previousValue, currentValue) => previousValue + currentValue.price, 0 );
+
 
 console.log(summedPrice)
 
